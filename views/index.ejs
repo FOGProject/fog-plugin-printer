@@ -1,0 +1,32 @@
+<script src='/js/fog_plugins/printer/printer.js'></script>
+<style>
+#printerSearchPanel {
+  width:305px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+.fogPrinterOptions {
+  display:none;
+}
+</style>
+<div class="subWindowMainWrapper">
+  <div class='subPageContainer entrypoint' id='home'>
+    <%- include home %>
+  </div>
+  <div class='subPageContainer secondaryPage' id='edit'>
+    <%- include edit %>
+  </div>
+  <div class='subPageContainer secondaryPage' id='create'>
+    <%- include create %>
+  </div>
+  <!-- here we need to parse through plugins and add them-->
+  <script>
+    $(document).ready(function() {
+      homePage = 'home';
+      $.fogPrinter.BuildControls();
+    })
+
+  </script>
+</div>

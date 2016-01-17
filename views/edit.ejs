@@ -1,0 +1,70 @@
+<div class="subWindow">
+    <div class="navArea">
+      <h4>Menu</h4>
+      <button class="" rel="general">General</button>
+      <button class="" rel="options">Options</button>
+    </div>
+    <div class="subWindowWrapper">
+      <form id='updateForm'>
+        <input type='text' id='uuid' style='display:none;'>
+        <div id="general" class="subWindowContent default">
+          <p class="fs-title">Printer Update</p>
+          <div class="form-group">
+            <label>Printer Name:</label>
+            <input class="inputControl" id="uprintername" placeholder="Enter ..." type="text">
+          </div>
+          <div class="form-group">
+            <label>Printer Type:</label>
+            <select id="uprintertype" data-placeholder="Printer Type" style="width: 300px;" onChange="$.fogPrinter.getSelect();">
+                <option value="none">Select Printer Type</option>
+                <option value="ip">TCP/IP Printer</option>
+                <option value="iprint">iPrint Printer</option>
+                <option value="network">Network Printer</option>
+                <option value="cups">CUPS Printer</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Printer Description:</label><br/>
+            <textarea id='uprinterDesc' rows="4" cols="50"></textarea>
+          </div>
+        </div>
+        <div id="options" class="subWindowContent">
+          <p class="fs-title">Printer Options</p>
+          <div class="form-group">
+            <div id='uiprintPrinter' class='fogPrinterOptions'>
+              <label>Printer Alias*:</label>
+              <input class="inputControl" id="uiprintalias" placeholder="Enter ..." type="text">
+              <label>Printer Port:</label>
+              <input class="inputControl" id="uiprintport" placeholder="Enter ..." type="text">
+            </div>
+            <div id='uipPrinter' class='fogPrinterOptions'>
+              <label>Printer Alias*:</label>
+              <input class="inputControl" id="uipalias" placeholder="Enter ..." type="text">
+              <label>Printer Port*:</label>
+              <input class="inputControl" id="uipport" placeholder="Enter ..." type="text">
+              <label>Printer Model*:</label>
+              <input class="inputControl" id="uipmodel" placeholder="Enter ..." type="text">
+              <label>Printer INF File*:</label>
+              <input class="inputControl" id="uipinf" placeholder="Enter ..." type="text">
+              <label>Printer IP*:</label>
+              <input class="inputControl" id="uipip" placeholder="Enter ..." type="text">
+            </div>
+            <div id='unetworkPrinter' class='fogPrinterOptions'>
+              <label>Printer Path*: <i>example \\server\printername</i></label>
+              <input class="inputControl" id="unetworkpath" placeholder="Enter ..." type="text">
+            </div>
+            <div id='ucupsPrinter' class='fogPrinterOptions'>
+              <label>Printer Alias*:</label>
+              <input class="inputControl" id="ucupsalias" placeholder="Enter ..." type="text">
+              <label>Printer PPD File*:</label>
+              <input class="inputControl" id="ucupsinf" placeholder="Enter ..." type="text">
+              <label>Printer IP*:</label>
+              <input class="inputControl" id="ucupsip" placeholder="Enter ..." type="text">
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <button class="btnDelete"  id="printertDelete">Delete Printer</button>
+    <button class="btnSubmit"  id="printerSubmit">Update</button>
+</div>

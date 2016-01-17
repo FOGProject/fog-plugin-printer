@@ -1,0 +1,67 @@
+{
+  "name": "FOG Printer",
+  "version": "0.0.0",
+  "author": "FOG Project",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/FOGProject/fog-too-printer.git"
+  },
+  "description": "A Free Open Source Ghost",
+  "keywords": [],
+  "scripts": {
+    "test": "mocha test"
+  },
+  "routes": [
+    {
+      "type": "function",
+      "url": "/printer",
+      "action": "printer.entry"
+    }
+  ],
+  "dependencies": {
+  },
+  "license": "GPL v3",
+  "menu": {
+    "mainMenu": {
+      "title": "Printers",
+      "subMenu":[
+        {
+          "menu": "Create Printer",
+          "title": "FOG Printer",
+          "subTitle": "Create Printer",
+          "panel": "create",
+          "type": "url",
+          "path": "index"
+        },
+        {
+          "menu": "List Printers",
+          "title": "FOG Printer",
+          "subTitle": "List All Printer",
+          "panel": "home",
+          "type": "url",
+          "path": "index",
+          "loadFunction": "list"
+        }
+      ]
+    }
+  },
+  "addTo": [
+    {
+      "type": "host",
+      "title": "Printers",
+      "url": "addon"
+    },
+    {
+      "type": "group",
+      "title": "Printers",
+      "url": "addon"
+    }
+  ],
+  "files": {
+    "assets": "assets",
+    "models": "models",
+    "views": "views",
+    "api": "api"
+  }
+}

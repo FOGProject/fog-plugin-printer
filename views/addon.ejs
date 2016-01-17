@@ -1,0 +1,16 @@
+<script src='js/fog_plugins/printer/addon.js'></script>
+<script>
+$(document).ready(function() {
+  $.fogPrinter.BuildControls();
+})
+</script>
+  <h3 style="text-align:center;" id='printerAddonHeader'></h3>
+  <h4>To view printers to add click here <input type='checkbox' id='toggleToAdd'></input></h4><br/>
+  <div id='printerManagementLevel'>
+    <input type='radio' class='printManage' name='printManage' rel='none' checked/> No Management<br/>
+    <input type='radio' class='printManage' name='printManage' rel='only' /> Only Allow FOG Printers<br/>
+    <input type='radio' class='printManage' name='printManage' rel='allow' /> Allow User to Add Non FOG Printers<br/>
+  </div>
+  <div id='printersToAdd' style='width:90%;display:none;'><div id='tblToAdd'></div><button style='width:150px;margin-left:auto;margin-right:auto;' class='printerButton btn btn-block btn-primary' onClick='$.fogPrinter.addPrinter();'>Add Printer(s)</button></div>
+  <br/><br/>
+  <div id='installedPrinters' style='width:90%;'><div id='tblIsInstalled'></div><button style='width:150px;margin-left:auto;margin-right:auto;' class='printerButton btn btn-block btn-primary' onClick='$.fogPrinter.removePrinter();'>Remove Printer(s)</button></div>

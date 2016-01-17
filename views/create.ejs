@@ -1,0 +1,94 @@
+
+<script>
+
+$(function () {
+//jQuery time
+$.fogDashBoard.NewCreateForm();
+
+$(".submit").click(function(){
+return false;
+})
+});
+
+</script>
+<div class='subWindow'>
+  <!-- multistep form -->
+  <div class = 'createFormContainer'>
+  <form id="createform">
+  	<!-- progressbar -->
+  	<ul id="createProgressbar">
+  		<li class="createNavItem active">Printer</li>
+      <li class="createNavItem active">Options</li>
+  		<li class='createNavItem'>Confirm</li>
+  	</ul>
+  	<!-- fieldsets -->
+  	<fieldset>
+  		<p class="fs-title">Printer Creation</p>
+      <div class="form-group">
+        <label>Printer Name:</label>
+        <input class="inputControl" id="printername" placeholder="Enter ..." type="text">
+      </div>
+      <div class="form-group">
+        <label>Printer Type:</label>
+        <select id="printertype" data-placeholder="OS Type" style="width: 300px;" onChange="$.fogPrinter.getSelect();">
+            <option value="none">Select Printer Type</option>
+            <option value="ip">TCP/IP Printer</option>
+            <option value="iprint">iPrint Printer</option>
+            <option value="network">Network Printer</option>
+            <option value="cups">CUPS Printer</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Printer Description:</label><br/>
+        <textarea id='printerDesc' rows="4" cols="50"></textarea>
+      </div>
+  		<input type="button" name="next" class="next action-button" onClick=$.fogPrinter.CheckPrinterCreate(); value="Next" />
+    </fieldset>
+    <fieldset>
+      <p class="fs-title">Printer Options</p>
+      <div class="form-group">
+        <div id='iprintPrinter' class='fogPrinterOptions'>
+          <label>Printer Alias*:</label>
+          <input class="inputControl" id="iprintalias" placeholder="Enter ..." type="text">
+          <label>Printer Port:</label>
+          <input class="inputControl" id="iprintport" placeholder="Enter ..." type="text">
+        </div>
+        <div id='ipPrinter' class='fogPrinterOptions'>
+          <label>Printer Alias*:</label>
+          <input class="inputControl" id="ipalias" placeholder="Enter ..." type="text">
+          <label>Printer Port*:</label>
+          <input class="inputControl" id="ipport" placeholder="Enter ..." type="text">
+          <label>Printer Model*:</label>
+          <input class="inputControl" id="ipmodel" placeholder="Enter ..." type="text">
+          <label>Printer INF File*:</label>
+          <input class="inputControl" id="ipinf" placeholder="Enter ..." type="text">
+          <label>Printer IP*:</label>
+          <input class="inputControl" id="ipip" placeholder="Enter ..." type="text">
+        </div>
+        <div id='networkPrinter' class='fogPrinterOptions'>
+          <label>Printer Path*: <i>example \\server\printername</i></label>
+          <input class="inputControl" id="networkpath" placeholder="Enter ..." type="text">
+        </div>
+        <div id='cupsPrinter' class='fogPrinterOptions'>
+          <label>Printer Alias*:</label>
+          <input class="inputControl" id="cupsalias" placeholder="Enter ..." type="text">
+          <label>Printer PPD File*:</label>
+          <input class="inputControl" id="cupsinf" placeholder="Enter ..." type="text">
+          <label>Printer IP*:</label>
+          <input class="inputControl" id="cupsip" placeholder="Enter ..." type="text">
+        </div>
+      </div>
+      <input type="button" name="previous" class="previous action-button" value="Previous" />
+  		<input type="button" name="next" class="next action-button" onClick=$.fogPrinter.BuildConfirm(); value="Next" />
+  	</fieldset>
+  	<fieldset>
+  		<h2 class="fs-title">Confirm Printer</h2>
+  		<p><strong>Printer Name:</strong> <span class='confirmLabel' id='confirmPrinterName'></span></p>
+  		<p><strong>Printer Type:</strong> <span class='confirmLabel' id='confirmPrinterType'></span></p>
+      <p><strong>Printer Description:</strong> <span class='confirmLabel' id='confirmPrinterDesc'></span></p>
+  		<input type="button" name="previous" class="previous action-button" value="Previous" />
+  		<input type="submit" name="submit" onClick='$.fogPrinter.Create();' class="submit action-button" value="Create" />
+  	</fieldset>
+  </form>
+</div>
+</div>
